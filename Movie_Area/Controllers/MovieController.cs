@@ -1,10 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Movie_Area.Context;
-using Movie_Area.Dtos;
-using Movie_Area.Entities;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Movie_Area.Controllers
 {

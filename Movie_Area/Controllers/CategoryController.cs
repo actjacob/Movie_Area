@@ -59,6 +59,7 @@ namespace Movie_Area.Controllers
             }
             return BadRequest();
         }
+
         [HttpPut("{categoryId}")]
         public ActionResult UpdateCategory([FromRoute] Guid categoryId, CategoryDTO model)
         {
@@ -68,7 +69,7 @@ namespace Movie_Area.Controllers
                 return Ok(category);
             }
             return BadRequest();
-        }
+        } 
 
     }
 }
