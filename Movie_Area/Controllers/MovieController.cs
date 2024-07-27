@@ -1,5 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Movie_Area.Context;
+using Movie_Area.Dtos;
+using Movie_Area.Entities;
+using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace Movie_Area.Controllers
 {
@@ -7,6 +13,7 @@ namespace Movie_Area.Controllers
     [ApiController]
     public class MovieController : ControllerBase
     {
+
         private readonly ApplicationDbContext _context;
         public MovieController(ApplicationDbContext context)
         {
@@ -44,11 +51,11 @@ namespace Movie_Area.Controllers
                 _context.Movies.Remove(movie);
                 if (_context.SaveChanges() > 0)
                 {
-                    return Ok();
+                    return Ok(movie);
                 }
             }
             return BadRequest();
-        }
+        }   
 
         [HttpGet]
         public ActionResult GetAllMovie()
@@ -98,6 +105,7 @@ namespace Movie_Area.Controllers
             }
             return NotFound();
         }  
+
 
     }
 }

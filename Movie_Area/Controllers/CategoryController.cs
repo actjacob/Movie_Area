@@ -62,6 +62,11 @@ namespace Movie_Area.Controllers
 
         [HttpPut("{categoryId}")]
         public ActionResult UpdateCategory([FromRoute] Guid categoryId, CategoryDTO model)
+
+        [HttpPut("{categoryId}")]
+
+        public ActionResult UpdateCategory([FromRoute]Guid categoryId,CategoryDTO model)
+
         {
             Category category = _context.Categories.Find(categoryId);
             if (category is not null)
@@ -69,7 +74,10 @@ namespace Movie_Area.Controllers
                 return Ok(category);
             }
             return BadRequest();
-        } 
 
+        }
+
+
+        } 
     }
 }
